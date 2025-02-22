@@ -21,12 +21,14 @@ function sendMessage() {
 
 // Emergency Mode (Fake School App Loading)
 function emergencyMode() {
-    emergencyScreen.classList.remove("hidden"); // Show fake loading screen
+    emergencyScreen.classList.remove("hidden"); // Show emergency screen
+    document.body.style.overflow = "hidden"; // Disable scrolling
 }
 
 // Exit Emergency Mode with "Q"
 document.addEventListener("keydown", function(event) {
     if (event.key.toLowerCase() === "q") {
         emergencyScreen.classList.add("hidden"); // Hide emergency screen
+        document.body.style.overflow = "auto"; // Re-enable scrolling
     }
 });
